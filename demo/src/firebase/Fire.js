@@ -29,14 +29,22 @@ function Fire()
             <h2>First Name
                 <input value={fname} onChange={(e)=>setFname(e.target.value)} style={{marginRight:'8px'}}></input>
             </h2>
-            <h2>First Name
+            <h2>Last Name
                 <input value={lname} onChange={(e)=>setLname(e.target.value)} style={{marginRight:'8px'}}></input>
             </h2>
             <button onClick={handlecreate}>Add data</button>
             {
                 val.map(value=><div>
-                    <h1>{value.name1}</h1>
-                    <h1>{value.name2}</h1>
+                    <table style={{border:'1px solid black'}}>
+                    <thead>
+                        <td>
+                            <tr>
+                            <h1>{value.name1}</h1>
+                            <h1>{value.name2}</h1>
+                            </tr>
+                        </td>
+                    </thead>
+                    </table>
                 </div>)
             }
         </div>
