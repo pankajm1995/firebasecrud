@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import{database} from './config'
 import {addDoc, collection, doc, getDoc, getDocs,} from 'firebase/firestore'
 function Fire()
 {
@@ -25,10 +26,10 @@ function Fire()
         <div>
             <h1>Fire base component</h1>
             <h2>First Name
-                <input value={fname} onChange={setFname(e.target.value)} style={{marginRight:'8px'}}></input>
+                <input value={fname} onChange={(e)=>setFname(e.target.value)} style={{marginRight:'8px'}}></input>
             </h2>
             <h2>First Name
-                <input value={lname} onChange={setLname(e.target.value)} style={{marginRight:'8px'}}></input>
+                <input value={lname} onChange={(e)=>setLname(e.target.value)} style={{marginRight:'8px'}}></input>
             </h2>
             <button onClick={handlecreate}>Add data</button>
             {
