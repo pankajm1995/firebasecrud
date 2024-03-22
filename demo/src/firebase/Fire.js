@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import{database} from './config'
-import {addDoc, collection, doc, getDoc, getDocs,} from 'firebase/firestore'
+import {addDoc, collection, getDocs} from 'firebase/firestore'
 function Fire()
 {
     const [fname,setFname]= useState('');
@@ -18,7 +18,8 @@ function Fire()
         const getdata= async()=>
         {
             const dbval =await getDocs(value);
-            setValue(dbval.docs.map(doc=>({...doc.data,id:doc.id})))
+            setValue(dbval.docs.map(doc=>({...doc.data(),id:doc.id})))
+            debugger;
         }
         getdata();
     })
